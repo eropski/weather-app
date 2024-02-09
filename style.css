@@ -1,0 +1,86 @@
+body {
+  background-color: rgb(248, 241, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+
+.allcontent {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px rgb(132, 132, 132, 0.1);
+  padding: 30px;
+  width: 600px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+input[type="submit"] {
+  color: white;
+  background: blueviolet;
+  margin: 5px;
+  padding: 15px 20px;
+  border: none;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+input[type="search"] {
+  font-size: 15px;
+  border-radius: 5px;
+  width: 400px;
+  padding: 15px 20px;
+  border: none;
+  background: rgb(248, 241, 255);
+}
+
+main {
+  border-top: 1px solid rgb(248, 241, 255);
+  border-bottom: 1px solid rgb(248, 241, 255);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  margin-top: 20px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  text-align: center;
+  margin-bottom: 60px;
+}
+h1 {
+  color: black;
+}
+
+a {
+  color: blueviolet;
+}
+
+.fancy {
+  font-weight: bold;
+  color: magenta;
+}
+
+.current_temp {
+  color: black;
+  font-size: 40px;
+  margin-top: 20px;
+}
+.current_temp_icon {
+  position: relative;
+  top: -10px;
+  font-size: 50px;
+}
+.bigNumber {
+  font-size: 80px;
+  font-weight: bold;
+}
+.current_temp_unit {
+  position: relative;
+  top: -20px;
+}
+footer {
+  text-align: center;
+}

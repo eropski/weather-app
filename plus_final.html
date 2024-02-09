@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="allcontent">
+      <form>
+        <input type="search" placeholder="Enter a city" id="searched-city" />
+        <input type="submit" value="Search" />
+      </form>
+      <main>
+        <div class="current_conditions">
+          <h1>San Francisco</h1>
+          <p><span class="day-time">###day 00:00</span>, few clouds</p>
+          <p>
+            Humidity: <span class="fancy">87%</span>, Wind
+            <span class="fancy">7.2km/h</span>
+          </p>
+        </div>
+        <div class="current_temp">
+          <span class="current_temp_icon">☀️</span>
+          <span class="bigNumber">14</span>
+          <span class="current_temp_unit"><sup>°F</sup></span>
+        </div>
+      </main>
+      <div class="forecast_weather">
+        <ul>
+          <li>Thu <br />⛅️ <br /><span class="fancy">14°C</span> - 8°C</li>
+          <li>Fri <br />⛅️ <br /><span class="fancy">14°C</span> - 8°C</li>
+          <li>Sat <br />⛅️ <br /><span class="fancy">14°C</span> - 8°C</li>
+          <li>Sun <br />⛅️ <br /><span class="fancy">14°C</span> - 8°C</li>
+          <li>Mon <br />⛅️ <br /><span class="fancy">14°C</span> - 8°C</li>
+        </ul>
+      </div>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="#">Emma</a> and is <a href="#">on GitHub</a> and
+          <a href="#">hosted on Netlify</a>
+        </p>
+      </footer>
+    </div>
+    <script src="interactivity.js"></script>
+  </body>
+</html>
