@@ -14,17 +14,20 @@ function displayCityTemperature(response) {
 }
 
 //Call API
-function findCityApi(event) {
-  event.preventDefault();
-  let searchedCity = document.querySelector("#searched-city");
-  let city = searchedCity.value;
+function findCityApi(city) {
   let apiKey = "9c0e95f0fc9fca107302467o2fac95tb";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayCityTemperature);
 }
 
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  let searchedCity = document.querySelector("#searched-city");
+  findCityApi(searchedCity.value);
+}
+
 let form = document.querySelector("form");
-form.addEventListener("submit", findCityApi);
+form.addEventListener("submit", handleSearchSubmit);
 
 //Day of week and time updated
 let now = new Date();
