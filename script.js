@@ -4,6 +4,8 @@ function displayCityTemperature(response) {
     let temperatureElement = document.querySelector(".bigNumber"); // span on html page
     let temperature = Math.round(response.data.temperature.current);
     let h1 = document.querySelector("h1");
+    let currentConditions = document.querySelector("#city-conditions");
+    currentConditions.innerHTML = response.data.condition.description;
     h1.innerHTML = response.data.city;
     temperatureElement.innerHTML = temperature;
   } else {
