@@ -29,6 +29,8 @@ function handleSearchSubmit(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSearchSubmit);
 
+findCityApi("Anchorage");
+
 //Day of week and time updated
 let now = new Date();
 let days = [
