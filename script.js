@@ -6,7 +6,9 @@ function displayCityTemperature(response) {
     let h1 = document.querySelector("h1");
     let currentConditions = document.querySelector("#city-conditions");
     let currentHumidity = document.querySelector("#city-humidity");
+    let currentWind = document.querySelector("#city-wind");
 
+    currentWind.innerHTML = `${response.data.wind.speed}mph`;
     currentHumidity.innerHTML = `${response.data.temperature.humidity}%`;
     currentConditions.innerHTML = response.data.condition.description;
     h1.innerHTML = response.data.city;
