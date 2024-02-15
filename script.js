@@ -5,6 +5,9 @@ function displayCityTemperature(response) {
     let temperature = Math.round(response.data.temperature.current);
     let h1 = document.querySelector("h1");
     let currentConditions = document.querySelector("#city-conditions");
+    let currentHumidity = document.querySelector("#city-humidity");
+
+    currentHumidity.innerHTML = response.data.temperature.humidity;
     currentConditions.innerHTML = response.data.condition.description;
     h1.innerHTML = response.data.city;
     temperatureElement.innerHTML = temperature;
