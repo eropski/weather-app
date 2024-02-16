@@ -7,7 +7,10 @@ function displayCityTemperature(response) {
     let currentConditions = document.querySelector("#city-conditions");
     let currentHumidity = document.querySelector("#city-humidity");
     let currentWind = document.querySelector("#city-wind");
+    let dayTime = document.querySelector(".day-time");
+    let date = new Date(response.data.time * 1000);
 
+    dayTime.innerHTML = formatDate(date);
     currentWind.innerHTML = `${response.data.wind.speed}mph`;
     currentHumidity.innerHTML = `${response.data.temperature.humidity}%`;
     currentConditions.innerHTML = response.data.condition.description;
@@ -39,19 +42,19 @@ form.addEventListener("submit", handleSearchSubmit);
 findCityApi("Anchorage");
 
 //Day of week and time updated
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let dayTime = document.querySelector(".day-time");
+function formatDate(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
 
-dayTime.innerHTML = `${day} ${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
+  return `${day} ${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
+}
