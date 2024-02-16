@@ -70,7 +70,7 @@ a {
 }
 .current_temp_icon {
   position: relative;
-  top: +21px;
+  top: -60px;
 }
 .bigNumber {
   font-size: 80px;

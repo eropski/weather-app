@@ -9,7 +9,9 @@ function displayCityTemperature(response) {
     let currentWind = document.querySelector("#city-wind");
     let dayTime = document.querySelector(".day-time");
     let date = new Date(response.data.time * 1000);
+    let icon = document.querySelector(".current-temp-icon");
 
+    icon.innerHTML = `<img src="${response.data.condition.icon_url}"/>`;
     dayTime.innerHTML = formatDate(date);
     currentWind.innerHTML = `${response.data.wind.speed}mph`;
     currentHumidity.innerHTML = `${response.data.temperature.humidity}%`;
