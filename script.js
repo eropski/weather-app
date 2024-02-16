@@ -1,4 +1,4 @@
-// Display typed city and current temp
+// Display typed city and current temp, humidity, conditions, wind, etc.
 function displayCityTemperature(response) {
   if (response.data.status !== "not_found") {
     let temperatureElement = document.querySelector(".bigNumber"); // span on html page
