@@ -67,19 +67,18 @@ a {
   color: black;
   font-size: 40px;
   margin-top: 20px;
+  display: flex;
 }
-.current_temp_icon {
-  position: relative;
-  top: +60px;
-}
+
 .bigNumber {
   font-size: 80px;
   font-weight: bold;
-  top: -40px;
+  position: relative;
+  top: +6px;
 }
 .current_temp_unit {
   position: relative;
-  top: -40px;
+  top: +10px;
 }
 footer {
   text-align: center;
