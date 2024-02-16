@@ -55,14 +55,3 @@ let minutes = now.getMinutes();
 let dayTime = document.querySelector(".day-time");
 
 dayTime.innerHTML = `${day} ${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
-
-// SheCodes differences ALERT from ARRAY
-// if (weather[city] !== undefined) {
-// let temperature = weather[city].temp;
-// let humidity = weather[city].humidity;
-// let celsiusTemperature = Math.round(temperature);
-// let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
-// alert(
-//  `It is currently ${celsiusTemperature}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${humidity}%`
-//  );
-// } else {
