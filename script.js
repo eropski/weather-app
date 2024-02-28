@@ -60,3 +60,15 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
 }
+
+// Forecast
+let forecast = document.querySelector("#forecast");
+
+forecast.innerHTML = `
+<div class="weater-forecast-day">Thu</div>
+        <div class="weather-forecast-icon">⛅️</div>
+        <div class="weater-forecast-temperature">
+          <span class="weather-forecast-high">14</span>° -
+          <span class="weather-forecast-low">8</span>°
+        </div>
+`;
