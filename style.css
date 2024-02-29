@@ -9,7 +9,7 @@ body {
   border-radius: 10px;
   box-shadow: 3px 3px rgb(132, 132, 132, 0.1);
   padding: 30px;
-  width: 600px;
+  max-width: 600px;
   display: block;
   margin: 0 auto;
   margin-top: 60px;
@@ -28,7 +28,7 @@ input[type="submit"] {
 input[type="search"] {
   font-size: 15px;
   border-radius: 5px;
-  width: 400px;
+  width: 80%;
   padding: 15px 20px;
   border: none;
   background: rgb(248, 241, 255);
