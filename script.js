@@ -64,27 +64,38 @@ function formatDate(date) {
 }
 
 // Forecast
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  return days[date.getDay()];
+}
 function getForecast(city) {
   let apiKey = "9c0e95f0fc9fca107302467o2fac95tb";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
   axios(apiURL).then(displayForecast);
 }
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Tues", "Wed", "Thurs", "Fri", "Sat"];
+
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
-    <div class="weater-forecast-day">${day}</div>
-    <div class="weather-forecast-icon">⛅️</div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
+    <div class="weater-forecast-day">${formatForecastDay(day.time)}</div>
+    <div class="weather-forecast-icon">
+    <img src="${day.condition.icon_url}"/> </div>
     <div class="weater-forecast-temperature">
-        <span class="weather-forecast-high">14</span>° -
-        <span class="weather-forecast-low">8</span>°
+        <span class="weather-forecast-high">
+        ${Math.round(day.temperature.maximum)}°</span> -
+        <span class="weather-forecast-low">${Math.round(
+          day.temperature.minimum
+        )}°</span>
     </div>
 `;
+    }
   });
   forecastElement.innerHTML = forecastHtml;
 }
