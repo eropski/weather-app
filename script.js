@@ -18,6 +18,8 @@ function displayCityTemperature(response) {
     currentConditions.innerHTML = response.data.condition.description;
     h1.innerHTML = response.data.city;
     temperatureElement.innerHTML = temperature;
+
+    getForecast(response.data.city);
   } else {
     alert(
       "We can't find that city in our database. Please check for a misspelling and try typing your city name again."
@@ -62,6 +64,11 @@ function formatDate(date) {
 }
 
 // Forecast
+function getForecast(city) {
+  let apiKey = "9c0e95f0fc9fca107302467o2fac95tb";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios(apiURL).then(displayForecast);
+}
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let days = ["Tues", "Wed", "Thurs", "Fri", "Sat"];
